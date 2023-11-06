@@ -1,0 +1,296 @@
+body {
+    background-color: aliceblue;
+    color: rgb(28, 42, 125);
+    font-family: "Arial";
+}
+
+div{
+    line-height: 1.5;
+    padding: 15px;
+}
+
+.hide {
+    position: absolute;
+    top: -50px;
+}
+
+li {
+    color: navy;
+}
+
+ul, ol {
+    margin-left: 20px;
+    list-style-type: none; 
+    padding: 0; 
+}
+
+ul > li, ol > li {
+    display: block;
+    text-align: center;
+    margin: 10px;
+    font-size: medium;
+}
+
+/* navigation edits */
+nav {
+    border: 2px solid rgb(192, 219, 255);
+    background-color: white;
+    padding: 0;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+nav > ul > li {
+    display: inline-block;
+    margin: 20px;
+    font-size: 30px;
+}
+
+nav a {
+    text-decoration: none; 
+    color: rgb(112, 133, 240); 
+    font-size: 20px;
+}
+
+nav a:hover {
+    text-decoration: underline; 
+}
+
+a {
+    text-transform: uppercase;
+    padding: 5px;
+    color: #3465cd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+button {
+    background-color: navy;
+    color: white;  
+    padding: 10px 27px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer; 
+    border-radius: 4px; 
+  }
+  
+
+/*image styles*/
+img, figure{
+    border: 3px solid #153386;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 30px;
+}
+
+img {
+    width: 50%;
+    transition: transform 0.3s ease;
+}
+
+img:hover, figure:hover {
+    transform: scale(1.05);
+}
+
+.gif{
+    display: none;
+}
+
+p, figcaption {
+    line-height:1.5;
+    margin-left: 20px;
+    font-size: small;
+}
+
+span {
+    margin: 10px;
+    font-size: medium;
+}
+
+.skip {
+    display: none;
+}
+
+/*header style*/
+h1, h2, h3 {
+    font-family: "Arial";
+    margin: auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: x-large;
+}
+
+h2{
+    font-size: larger;
+    color: rgb(4, 35, 61);
+}
+
+h3{
+    font-size: large;
+    color: black;
+}
+
+/* class specific styles */
+.container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+}
+.main-pic {
+    grid-column: 1;
+    grid-row: 1;
+    justify-content: center;
+    align-items: center;
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery img{
+    width: 100%;
+    height: auto; 
+    margin: auto; 
+    display: inline-block;
+}
+
+/* animations */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+@media (prefers-reduced-motion: reduce) {
+    .gallery {
+        animation: none;
+    }
+}
+
+/* mobile style */
+@media screen and (max-width: 600px) {
+    /* Adjustments for smaller screens */
+    h2, h3, p {
+      font-size: 90%; 
+      padding-left: 10px; 
+    }
+
+    img {
+        margin: 10px 5px; 
+        border-radius: 5px 10px 5px 10px; 
+        width: auto; 
+        max-width: 300px; 
+    }
+
+    ul {
+        margin-left: 10px;
+        list-style-type: disc;
+        padding-left: 20px; 
+    }
+
+    li {
+        margin-top: 5px;
+        display: list-item;
+        margin-left: 0;
+        font-size: 16px;
+    }
+
+    nav {
+        padding: 5px;
+        border: none;
+    }
+
+    nav > ul > li {
+        margin: 5px 0;
+        font-size: 16px;
+    }
+
+    body > a {
+        display: inline-block;
+        margin: 10px;
+    }
+
+    .hide {
+        position: absolute;
+        top: -50px;
+    }
+
+    .hide a{
+        background: white;
+        padding: 8px;
+        position: relative;
+        transition: top 1s ease, left 1s ease;
+        z-index: 2;
+    }
+}
+
+/* tablet styling */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /* Tablet Styles Go Here */
+    body {
+        font-size: 17px; 
+    }
+
+    h2 {
+        font-size: 28px; 
+        margin-left: 25px;
+    }
+
+    p {
+        padding-left: 25px; 
+    }
+
+    img {
+        display: block; 
+        margin: 25px auto; 
+        max-width: 85%;
+    }
+
+    ul {
+        padding-left: 25px;
+        margin-left: 20px;
+    }
+
+    li {
+        font-size: 22px;
+        margin-bottom: 5px;
+    }
+
+    nav {
+        padding-left: 25px; 
+    }
+
+    nav > ul {
+        margin: 0;
+        text-align: center;
+    }
+
+    nav > li {
+        padding: 5px 15px;
+        margin-right: 10px;
+        display: inline-block;
+    }
+    
+    a {
+        font-size: 22px; 
+        margin: 8px; 
+        padding: 8px 12px; 
+        display: inline-block;
+    }
+}
